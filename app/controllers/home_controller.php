@@ -6,4 +6,8 @@ class Home extends Controller {
 		$this->view('home/home');
 	}
 	
-}
+	public function login(){
+		$this->view('home/login');
+	}
+	
+} 
