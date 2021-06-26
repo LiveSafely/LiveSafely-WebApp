@@ -1,0 +1,2 @@
+ErrorDocument 404 /LiveSafelyWebApp/404.html
+ErrorDocument 403 /LiveSafelyWebApp/403.html
