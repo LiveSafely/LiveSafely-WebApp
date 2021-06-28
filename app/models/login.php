@@ -19,8 +19,8 @@ class login_model{
             if($result){
                 $row = $statement->fetchAll();
                 if($row[0]['type'] == 0){
-                    //$_SESSION["admin"] = $username; 
-                    echo "admin";
+                    $_SESSION["admin"] = $username; 
+                    header("Location: /LiveSafelyWebApp/www/admin/home");
                 }else if($row[0]['type'] == 1){
                     $_SESSION["doctor"] = $username; 
                     header("Location: /LiveSafelyWebApp/www/doctor/home");

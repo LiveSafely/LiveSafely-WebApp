@@ -1,9 +1,9 @@
 <?php
 
-class User extends Controller {
+class Admin extends Controller {
 
 	public function index() {
-		$this->view('user/home');
+		$this->view('admin/home');
 	}
 
 	public function close () {
