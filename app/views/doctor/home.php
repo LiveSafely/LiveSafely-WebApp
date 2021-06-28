@@ -24,3 +24,20 @@
         </form>
 </body>
 </html>
+
+<?php 
+require_once '../app/models/doctor.php';
+$doctorModel = new doctor_model();
+if(isset($_POST['register'])){
+    $name = $_POST["name"];
+    $lastname = $_POST["lastname"];
+    $username = $_POST["username"];
+    $pass = $_POST["password"];
+    $email = $_POST["email"];
+    $dui = $_POST["dui"];
+    $age = $_POST["age"];
+    $doctorModel->registerPerson($name, $lastname, $username, $_SESSION["doctor"], $pass, $email, $dui, $age);
+}
+
+
+?>
