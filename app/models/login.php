@@ -12,7 +12,7 @@ class login_model{
             $connection = new Connection;
             $connection->conn();
             $statement = $connection->conn->prepare(
-                "SELECT * FROM users WHERE username='$username' AND password='$password'"
+                "SELECT * FROM users WHERE username='$username' AND password='$password' AND status=1"
             );
             $statement->execute();
             $result = $statement->rowCount();
