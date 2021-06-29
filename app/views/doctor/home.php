@@ -12,7 +12,7 @@
     <title>Inicio Doctor</title>
 </head>
 <body>
-        <h1>Inicio del doctor <?php echo $_SESSION["doctor"];?> </h1>
+        <h1>Inicio del doctor <?php echo $doctorModel->getDoctorNames($_SESSION["doctor"]);?> </h1>
         <a href="">Cerrar Sesion</a>
         <hr>
         <h1>Añadir Paciente</h1>
@@ -29,16 +29,28 @@
         <hr>
         <h1>Crear Historial por paciente</h1>
         <form action="home" method="post">
-        <select name="usernamePaciente" id="">
-            <option value="">Seleccione un paciente</option>
-            <?php 
-               echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-            ?>
-        </select>
-        <br>
-        <input type="text" name="title" placeholder="Titulo" id=""><br>
-        <textarea name="desc" id="" cols="30" rows="10" placeholder="Descripción de la visita"></textarea>
-        <input type="submit" value="Añadir Record" name="addRecord">
+            <select name="usernamePaciente" id="">
+                <option value="">Seleccione un paciente</option>
+                <?php 
+                echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                ?>
+            </select>
+            <br>
+            <input type="text" name="title" placeholder="Titulo" id=""><br>
+            <textarea name="desc" id="" cols="30" rows="10" placeholder="Descripción de la visita"></textarea>
+            <input type="submit" value="Añadir Record" name="addRecord">
+        </form>
+        <hr>
+        <h1>Crear Receta por paciente</h1>
+        <form action="login" method="post">
+            <select name="usernamePaciente" id="">
+                <option value="">Seleccione un paciente</option>
+                <?php 
+                echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                ?>
+            </select>
+            <input type="text" name="diagnosis" placeholder="Diagnostico" id=""><br><br>
+            <input type="submit" value="Crear cabecera de la rece" name="addRecipe">
         </form>
         
 </body>
@@ -61,6 +73,11 @@ if(isset($_POST['addRecord'])){
     $username = $_POST["usernamePaciente"];
     $desc = $_POST["desc"];
     $doctorModel->insertRecord($_SESSION["doctor"], $username, $title, $desc);
+}
+if(isset($_POST["addRecipe"])){
+    $username = $_POST["usernamePaciente"];
+    $diagnosis = $_POST["diagnosis"];
+    $doctorModel->insertHeaderRecipe($username, $_SESSION["doctor"], $diagnosis);
 }
 
 

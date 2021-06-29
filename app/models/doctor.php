@@ -18,11 +18,25 @@ class doctor_model{
         }        
 
     }
+
+    public function getDoctorNames($idDoctor){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT name,lastname FROM users WHERE username='$idDoctor'");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $fullname = $result[0][0]." ".$result[0][1];
+            echo $fullname;
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+
     public function getUserByDoctor($idDoctor){
         try{
             $connection = new Connection;
             $connection->conn();
-            $query = "SELECT username FROM users WHERE  id_doctor='$idDoctor'";
             $statement = $connection->conn->prepare("SELECT username FROM users WHERE id_doctor='$idDoctor'");
             $statement->execute();
             $result = $statement->fetchAll();
@@ -49,5 +63,16 @@ class doctor_model{
             echo $e;
         }      
     }
+    public function insertHeaderRecipe($username, $idDoctor, $diagnosis){
+        $dateToday = date("Y/m/d");
+        try{
+            $query = "INSERT INTO recipe(username,id_doctor, date, diagnosis) VALUES('$username','$idDoctor', '$dateToday', '$diagnosis')";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+        }catch(PDOException $e){
+            echo $e;
+        }  
+    }   
 
 }
