@@ -74,5 +74,15 @@ class doctor_model{
             echo $e;
         }  
     }   
+    public function insertDisease($name, $desc,$type){
+        try{
+            $query = "INSERT INTO diseases(name, descr, type) VALUES('$name','$desc','$type')";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+        }catch(PDOException $e){
+            echo $e;
+        }  
+    }
 
 }

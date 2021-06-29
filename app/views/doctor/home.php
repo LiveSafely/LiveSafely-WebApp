@@ -52,6 +52,14 @@
             <input type="text" name="diagnosis" placeholder="Diagnostico" id=""><br><br>
             <input type="submit" value="Crear cabecera de la rece" name="addRecipe">
         </form>
+        <hr>
+        <h1>Añadir Enfermedades Infecciosas</h1>
+        <form action="home" method="post">
+            <input type="text" name="dName" id="" placeholder="Nombre"><br><br>
+            <textarea name="dDesc" id="" cols="30" rows="10" placeholder="Descripción"></textarea><br><br>
+            <input type="text" name="dType" id="" placeholder="Tipo"><br><br>
+            <input type="submit" name="addDisease" value="Agregar enfermedad">
+        </form>
         
 </body>
 </html>
@@ -79,6 +87,10 @@ if(isset($_POST["addRecipe"])){
     $diagnosis = $_POST["diagnosis"];
     $doctorModel->insertHeaderRecipe($username, $_SESSION["doctor"], $diagnosis);
 }
-
-
+if(isset($_POST["addDisease"])){
+    $name =$_POST["dName"];
+    $desc =$_POST["dDesc"];
+    $type =$_POST["dType"];
+    $doctorModel->insertDisease($name, $desc,$type);
+}
 ?>
