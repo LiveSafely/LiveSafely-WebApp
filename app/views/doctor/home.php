@@ -38,7 +38,7 @@
         <br>
         <input type="text" name="title" placeholder="Titulo" id=""><br>
         <textarea name="desc" id="" cols="30" rows="10" placeholder="Descripción de la visita"></textarea>
-        <input type="submit" value="Añadir Record">
+        <input type="submit" value="Añadir Record" name="addRecord">
         </form>
         
 </body>
@@ -55,6 +55,12 @@ if(isset($_POST['register'])){
     $dui = $_POST["dui"];
     $age = $_POST["age"];
     $doctorModel->registerPerson($name, $lastname, $username, $_SESSION["doctor"], $pass, $email, $dui, $age);
+}
+if(isset($_POST['addRecord'])){
+    $title = $_POST["title"];
+    $username = $_POST["usernamePaciente"];
+    $desc = $_POST["desc"];
+    $doctorModel->insertRecord($_SESSION["doctor"], $username, $title, $desc);
 }
 
 

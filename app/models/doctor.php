@@ -29,7 +29,7 @@ class doctor_model{
             $n = count($result);
             echo $n;
             for ($i = 0; $i <= $n-1; $i++) {
-                echo "<option value=''>". $result[$i]['username'] ."</option>";
+                echo "<option value='". $result[$i]['username'] ."'>". $result[$i]['username'] ."</option>";
             }
             
 
@@ -37,6 +37,17 @@ class doctor_model{
         }catch(PDOException $e){
             echo $e;
         }
+    }
+    public function insertRecord($idDoctor, $username, $title, $desc){
+        $dateToday = date("Y/m/d");
+        try{
+            $query = "INSERT INTO record(title,descr, date, username, id_doctor) VALUES('$title','$desc', '$dateToday', '$username', '$idDoctor')";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+        }catch(PDOException $e){
+            echo $e;
+        }      
     }
 
 }
