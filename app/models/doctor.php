@@ -84,5 +84,16 @@ class doctor_model{
             echo $e;
         }  
     }
+    public function showRecordByPatient($username, $idDoctor){
+        $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT date, title, descr FROM record WHERE id_doctor='$idDoctor' AND username='$username'");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $n = count($result);
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['title']."</td><td>".$result[$i]['descr']."</td></tr>";
+            }
+    }
 
 }

@@ -60,6 +60,33 @@
             <input type="text" name="dType" id="" placeholder="Tipo"><br><br>
             <input type="submit" name="addDisease" value="Agregar enfermedad">
         </form>
+        <hr>
+        <h1>Mostrar historial completo por paciente</h1>
+        <form action="home" method="post">
+            <select name="usernamePaciente" id="">
+                    <option value="">Seleccione un paciente</option>
+                    <?php 
+                    echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                    ?>
+            </select>
+            <input type="submit" name="showCompleteRecord" value="Mostrar Historial completo">
+        </form>
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Titulo</th>
+                <th>Descripción</th>
+            </tr>
+            <?php 
+                if(isset($_POST["showCompleteRecord"])){
+                    $username = $_POST["usernamePaciente"];
+                    $doctorModel->showRecordByPatient($username, $_SESSION["doctor"]);
+                }
+               
+            ?>
+        </table>
+            
+
         
 </body>
 </html>
