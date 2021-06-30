@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Inicio del usuario</h1>
+    <h1>Inicio del usuario <?php echo $_SESSION["user"]; ?></h1>
     <a href="">Cerrar Sesion</a>
 </body>
 </html>
