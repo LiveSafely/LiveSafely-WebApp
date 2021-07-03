@@ -124,11 +124,25 @@ class doctor_model{
             if($result){
                 echo "Ya existe un registro de ese paciente con esa enfermedad";
             }else{
-                $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
-                $connection = new Connection;
-                $connection->conn();
-                $connection->conn->exec($query);
+                $statement = $connection->conn->prepare("SELECT * FROM sickness WHERE username='$username' AND id_diseases='$idDis' AND status=0");
+                $statement->execute();
+                $result = $statement->rowCount();
+                if($result){
+                    $query = "UPDATE sickness SET status='$status' WHERE id_diseases='$idDis' AND username='$username'";
+                    $connection = new Connection;
+                    $connection->conn();
+                    $connection->conn->exec($query);
+                    $connection = null;
+                }else{
+                    $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
+                    $connection = new Connection;
+                    $connection->conn();
+                    $connection->conn->exec($query);
+                    $connection = null;
+                }
+                
             }
+            $connection = null;
 
 
             
