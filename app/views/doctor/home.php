@@ -85,6 +85,21 @@
                
             ?>
         </table>
+        <hr>
+        <h1>Asignar enfermamdes a los pacientes</h1>
+        <form action="login" method="post">
+            <select name="diseases" id="">
+                <option value="">Seleccione la enfermedad</option>
+                <?php $doctorModel->getDiseases(); ?>
+            </select>
+            <input type="text" name="username" placeholder="Username/Patient" id="">
+            <select name="status" id="">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+            <input type="submit" name="asingValue" value="Asignar">
+        </form>
+        
             
 
         
@@ -119,5 +134,11 @@ if(isset($_POST["addDisease"])){
     $desc =$_POST["dDesc"];
     $type =$_POST["dType"];
     $doctorModel->insertDisease($name, $desc,$type);
+}
+if(isset($_POST["asingValue"])){
+    $username= $_POST["username"];
+    $idDis = $_POST["diseases"];
+    $status=$_POST["status"];
+    $doctorModel->insertSickness($username,$_SESSION["doctor"], $idDis, $status);
 }
 ?>

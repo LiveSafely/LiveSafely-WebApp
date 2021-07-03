@@ -95,5 +95,34 @@ class doctor_model{
                 echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['title']."</td><td>".$result[$i]['descr']."</td></tr>";
             }
     }
+    public function getDiseases(){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT * FROM diseases");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $n = count($result);
+            echo $n;
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "<option value='". $result[$i]['id'] ."'>". $result[$i]['name'] ."</option>";
+            }
+            
+
+            
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+    public function insertSickness($username,$idDoctor, $idDis, $status){
+        try{
+            $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
 
 }

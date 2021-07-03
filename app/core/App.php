@@ -9,7 +9,7 @@ class App {
 	public function __construct() {
 		$url = $this->parseUrl();
 
-		if (file_exists('../app/controllers/'. $url[0] .'_controller.php')) {
+		if (file_exists('../app/controllers/'. @$url[0] .'_controller.php')) {
 			$this->controller = $url[0];
 		}
 		unset($url[0]);
