@@ -116,10 +116,22 @@ class doctor_model{
     }
     public function insertSickness($username,$idDoctor, $idDis, $status){
         try{
-            $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
             $connection = new Connection;
             $connection->conn();
-            $connection->conn->exec($query);
+            $statement = $connection->conn->prepare("SELECT * FROM sickness WHERE username='$username' AND id_diseases='$idDis' AND status=1");
+            $statement->execute();
+            $result = $statement->rowCount();
+            if($result){
+                echo "Ya existe un registro de ese paciente con esa enfermedad";
+            }else{
+                $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
+                $connection = new Connection;
+                $connection->conn();
+                $connection->conn->exec($query);
+            }
+
+
+            
         }catch(PDOException $e){
             echo $e;
         }
