@@ -99,6 +99,20 @@
             </select>
             <input type="submit" name="asingValue" value="Asignar">
         </form>
+        <hr>
+        <h1>Ver todos los pacientes con enfermedades activas</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nombre de enfermedad</th>
+                <th>Estado</th>
+            </tr>
+            <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
+        </table>
+        <hr>
+        
+
         
             
 

@@ -85,7 +85,8 @@ class doctor_model{
         }  
     }
     public function showRecordByPatient($username, $idDoctor){
-        $connection = new Connection;
+        try{
+            $connection = new Connection;
             $connection->conn();
             $statement = $connection->conn->prepare("SELECT date, title, descr FROM record WHERE id_doctor='$idDoctor' AND username='$username'");
             $statement->execute();
@@ -94,6 +95,9 @@ class doctor_model{
             for ($i = 0; $i <= $n-1; $i++) {
                 echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['title']."</td><td>".$result[$i]['descr']."</td></tr>";
             }
+        }catch(PDOException $e){
+            echo $e;
+        }
     }
     public function getDiseases(){
         try{
@@ -142,10 +146,22 @@ class doctor_model{
                 }
                 
             }
-            $connection = null;
-
-
-            
+            $connection = null; 
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+    public function getSickByStatus($idDoctor){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT users.name as name, users.lastname as lastname, diseases.name as diName, sickness.status FROM users, diseases, sickness WHERE users.username=sickness.username and diseases.id = sickness.id_diseases AND sickness.id_doctor='$idDoctor' AND sickness.status=1 ");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $n = count($result);
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "<tr><td>".$result[$i]['name']."</td><td>".$result[$i]['lastname']."</td><td>".$result[$i]['diName']."</td><td>Activo</td></tr>";
+            }
         }catch(PDOException $e){
             echo $e;
         }
