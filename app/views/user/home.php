@@ -24,7 +24,15 @@
             <input type="text" name="username" placeholder="Nombre de usuario" id="">
             <input type="submit" value="Agregar lugar" name="registerPlace" id="">
         </form>
-        <hr>
+    <hr>
+    <h1>Mostrar Historial de Recetas</h1>
+    <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Diagnostico</th>
+            </tr>
+            <?php $userModel->getRecipe($_SESSION["user"]);?>
+        </table>
 </body>
 </html>
 
