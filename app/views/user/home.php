@@ -34,6 +34,20 @@
                 
             </tr>
             <?php $userModel->getRecipe($_SESSION["user"]);?>
+    </table>
+    <hr>
+    <h1>Mostrar contenido de Recetas</h1>
+    <table>
+            <tr>
+                <th>id</th>
+                <th>Diagnostico</th>
+                <th>Nombre</th>
+                <th>Dosis</th>
+                <th>Cantidad</th>
+                <th>Comentario</th>
+                
+            </tr>
+            <?php $userModel->getMedicine($_SESSION["user"]);?>
         </table>
 </body>
 </html>

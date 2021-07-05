@@ -34,4 +34,20 @@ class user_model{
             echo $e;
         }
     }
+
+    public function getMedicine($username){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT recipe.id as id, recipe.diagnosis as diagnosis, medicine.name as name, medicine.dosis as dosis, medicine.qty as qty, medicine.comment as comment FROM recipe, medicine WHERE recipe.id = medicine.id_recipe AND username='$username' ");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $n = count($result);
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "<tr><td>".$result[$i]['id']."</td><td>".$result[$i]['diagnosis']."</td><td>".$result[$i]['name']."</td><td>".$result[$i]['dosis']."</td><td>".$result[$i]['qty']."</td><td>".$result[$i]['comment']."</td></tr>";
+            }
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
 }
