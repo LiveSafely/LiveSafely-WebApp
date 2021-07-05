@@ -1,6 +1,7 @@
 <?php
     require_once '../app/models/doctor.php';
     $doctorModel = new doctor_model();
+    if($_SESSION["doctor"]=="") header("Location: /LiveSafelyWebApp/www/home/login");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
 </head>
 <body>
         <h1>Inicio del doctor <?php echo $doctorModel->getDoctorNames($_SESSION["doctor"]);?> </h1>
-        <a href="">Cerrar Sesion</a>
+        <a href="close">Cerrar Sesion</a>
         <hr>
         <h1>Añadir Paciente</h1>
         <form action="home" method="post">
