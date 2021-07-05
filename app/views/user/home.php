@@ -30,6 +30,8 @@
             <tr>
                 <th>Fecha</th>
                 <th>Diagnostico</th>
+                <th>Info</th>
+                
             </tr>
             <?php $userModel->getRecipe($_SESSION["user"]);?>
         </table>

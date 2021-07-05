@@ -28,7 +28,7 @@ class user_model{
             $result = $statement->fetchAll();
             $n = count($result);
             for ($i = 0; $i <= $n-1; $i++) {
-                echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['diagnosis']."</td><td>"."</td></tr>";
+                echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['diagnosis']."</td><td><button>Ver</button></td></tr>";
             }
         }catch(PDOException $e){
             echo $e;
