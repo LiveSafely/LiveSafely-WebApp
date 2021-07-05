@@ -26,7 +26,7 @@
             <input type="text" name="dui" placeholder="Dui" id="">
             <input type="text" name="noJunta" placeholder="Numero de Junta" id="">
             <input type="number" name="age" placeholder="Edad" id="">
-            <input type="submit" value="Agregar paciente" name="register" id="">
+            <input type="submit" value="Agregar doctor" name="register" id="">
         </form>
         <hr>
 </body>
