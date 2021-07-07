@@ -105,17 +105,36 @@
                 </nav>
                 <!-- End of Topbar -->
             <div class="container-fluid">
-                <h1>Crear Receta por paciente</h1>
-                <form action="create_recipe" method="post">
-                    <select name="usernamePaciente" id="">
-                        <option value="">Seleccione un paciente</option>
-                        <?php 
-                        echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                        ?>
-                    </select>
-                    <input type="text" name="diagnosis" placeholder="Diagnostico" id=""><br><br>
-                    <input type="submit" value="Crear cabecera de la rece" name="addRecipe">
-                </form>
+                <h1>Recetas</h1>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Crear receta</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="create_recipe" method="post">
+                            <select name="usernamePaciente" class="form-control mb-2"  id="">
+                                <option value="">Seleccione un paciente</option>
+                                <?php 
+                                echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                                ?>
+                            </select>
+                            <input type="text" class="form-control mb-2" name="diagnosis" placeholder="Diagnostico" id=""><br><br>
+                            <input type="submit" class="form-control btn btn-success" value="Crear cabecera de la receta" name="addRecipe">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Añadir medicamentos a la receta</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="create_recipe" method="post">
+                            
+                        </form>
+                    </div>
+                </div>
+                
                 <hr>
             </div>
              

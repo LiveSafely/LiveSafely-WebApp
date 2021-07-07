@@ -99,6 +99,7 @@ class doctor_model{
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
+            echo "<script>alertify.success('Cabecera añadida correctamente!');</script>";
         }catch(PDOException $e){
             echo $e;
         }  

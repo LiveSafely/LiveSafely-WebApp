@@ -106,29 +106,50 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Mostrar historial completo por paciente</h1>
-                <form action="watch_record" method="post">
-                    <select name="usernamePaciente" id="">
-                            <option value="">Seleccione un paciente</option>
-                            <?php 
-                            echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                            ?>
-                    </select>
-                    <input type="submit" name="showCompleteRecord" value="Mostrar Historial completo">
-                </form>
-                <table>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Titulo</th>
-                        <th>Descripción</th>
-                    </tr>
-                    <?php 
-                        if(isset($_POST["showCompleteRecord"])){
-                            $username = $_POST["usernamePaciente"];
-                            $doctorModel->showRecordByPatient($username, $_SESSION["doctor"]);
-                        }
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Filtrar Historial</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="watch_record" method="post">
+                            <select name="usernamePaciente" class="form-control mb-2" id="">
+                                    <option value="">Seleccione un paciente</option>
+                                    <?php 
+                                    echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                                    ?>
+                            </select>
+                            <input type="submit" class="form-control mb-2 btn btn-success" name="showCompleteRecord" value="Mostrar Historial completo">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tabla de historiales</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Titulo</th>
+                                        <th>Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                        if(isset($_POST["showCompleteRecord"])){
+                                            $username = $_POST["usernamePaciente"];
+                                            $doctorModel->showRecordByPatient($username, $_SESSION["doctor"]);
+                                        }
                     
-                    ?>
-                </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>                
             </div>
              
             </div>
@@ -184,14 +205,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../../www/assets/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="../../www/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
+    <script src="../../www/assets/js/demo/datatables-demo.js"></script>
+    <script src="../../www/assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../www/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+    <!-- Page level custom scripts -->
+    <script src="../../www/assets/js/demo/datatables-demo.js"></script>
+
+    
 </body>
 
 </html>
+
+
+

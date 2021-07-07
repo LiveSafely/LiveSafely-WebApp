@@ -1782,14 +1782,14 @@
 			// Backwards compatibility - if there is no sEmptyTable given, then use the same as
 			// sZeroRecords - assuming that is given.
 			if ( ! lang.sEmptyTable && zeroRecords &&
-				defaults.sEmptyTable === "No data available in table" )
+				defaults.sEmptyTable === "No se ha encontrado nada" )
 			{
 				_fnMap( lang, lang, 'sZeroRecords', 'sEmptyTable' );
 			}
 	
 			// Likewise with loading records
 			if ( ! lang.sLoadingRecords && zeroRecords &&
-				defaults.sLoadingRecords === "Loading..." )
+				defaults.sLoadingRecords === "Cargando..." )
 			{
 				_fnMap( lang, lang, 'sZeroRecords', 'sLoadingRecords' );
 			}
@@ -11508,7 +11508,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "No se ha encontrado información disponible",
 	
 	
 			/**
@@ -11561,7 +11561,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
 	
 	
 			/**
@@ -11701,7 +11701,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrar _MENU_ ",
 	
 	
 			/**
@@ -11781,7 +11781,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Filtrar:",
 	
 	
 			/**
@@ -11839,7 +11839,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No se ha podido filtrar esa información"
 		},
 	
 	
