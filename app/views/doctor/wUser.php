@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </div>                
-                </div>
+            </div>
             
             </div>
             <footer class="sticky-footer bg-white">
