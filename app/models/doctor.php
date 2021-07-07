@@ -84,8 +84,9 @@ class doctor_model{
             $connection->conn();
             //Se ejecuta
             $connection->conn->exec($query);
+            echo "<script>alertify.success('Historial Agregado correctamente!');</script>";
         }catch(PDOException $e){
-            echo $e;
+            echo "<script>alertify.error('".$e."');</script>";
         }      
     }
     
