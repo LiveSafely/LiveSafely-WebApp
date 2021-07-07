@@ -28,7 +28,7 @@ class user_model{
             $result = $statement->fetchAll();
             $n = count($result);
             for ($i = 0; $i <= $n-1; $i++) {
-                echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['diagnosis']."</td><td><button>Ver</button></td></tr>";
+                echo "<tr><td>".$result[$i]['date']."</td><td>".$result[$i]['diagnosis']."</td></tr>";
             }
         }catch(PDOException $e){
             echo $e;
@@ -46,6 +46,20 @@ class user_model{
             for ($i = 0; $i <= $n-1; $i++) {
                 echo "<tr><td>".$result[$i]['id']."</td><td>".$result[$i]['diagnosis']."</td><td>".$result[$i]['name']."</td><td>".$result[$i]['dosis']."</td><td>".$result[$i]['qty']."</td><td>".$result[$i]['comment']."</td></tr>";
             }
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+
+    public function getUserNames($user){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT name,lastname FROM users");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $fullname = $result[0][0]." ".$result[0][1];
+            echo $fullname;
         }catch(PDOException $e){
             echo $e;
         }

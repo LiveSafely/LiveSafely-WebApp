@@ -87,7 +87,20 @@
                 </nav>
                 <!-- End of Topbar -->
             <div class="container-fluid">
-                <h1>Bienvenido al modulo de Usuario</h1>
+                <h1>Descripcion de Recetas</h1>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>Diagnostico</th>
+                        <th>Nombre</th>
+                        <th>Dosis</th>
+                        <th>Cantidad</th>
+                        <th>Comentario</th>
+                        
+                    </tr>
+                    <?php $userModel->getMedicine($_SESSION["user"]);?>
+                </table>
+                <hr>
             </div>
              
             </div>
@@ -154,15 +167,3 @@
 </body>
 
 </html>
-
-<?php 
-
-if(isset($_POST['registerPlace'])){
-    $latitude = $_POST["latitude"];
-    $longitude = $_POST["longitude"];
-    $descr = $_POST["descr"];
-    $username = $_POST["username"];
-    $userModel->registerPlace($id, $latitude, $longitude, $descr, $username);
-}
-
-?>
