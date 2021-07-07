@@ -162,7 +162,7 @@ if(isset($_POST['registerPlace'])){
     $longitude = $_POST["longitude"];
     $descr = $_POST["descr"];
     $username = $_POST["username"];
-    $userModel->registerPlace($id, $latitude, $longitude, $descr, $username);
+    $userModel->registerPlace($id, $latitude, $longitude, $descr, $dept, $username);
 }
 
 ?>

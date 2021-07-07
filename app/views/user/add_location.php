@@ -104,6 +104,10 @@
                     </div>
                     <p>
                     <div class="col-sm-10">
+                        <input class="form-control" type="text" name="dept" placeholder="Departamento" id="">
+                    </div>
+                    <p>
+                    <div class="col-sm-10">
                         <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" id="">
                     </div>
                     <p>
@@ -188,7 +192,7 @@ if(isset($_POST['registerPlace'])){
     $longitude = $_POST["longitude"];
     $descr = $_POST["descr"];
     $username = $_POST["username"];
-    $userModel->registerPlace($id, $latitude, $longitude, $descr, $username);
+    $userModel->registerPlace($id, $latitude, $longitude, $descr, $dept, $username);
 }
 
 ?>

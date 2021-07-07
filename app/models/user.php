@@ -7,9 +7,9 @@ class user_model{
     public function __construct() {
 	}
 
-    public function registerPlace($id , $latitude, $longitude, $descr, $username){
+    public function registerPlace($id , $latitude, $longitude, $descr, $dept, $username){
         try{
-            $query = "INSERT INTO places VALUES('$id' , '$latitude','$longitude', '$descr', '$username')";
+            $query = "INSERT INTO places VALUES('$id' , '$latitude','$longitude', '$descr', '$dept', '$username')";
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
