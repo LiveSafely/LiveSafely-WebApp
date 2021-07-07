@@ -92,23 +92,23 @@
                 <p>
                 <form action="add_location" method="post" >
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="latitude" placeholder="Latitud" id="">
+                        <input class="form-control" type="text" name="latitude" placeholder="Latitud" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="longitude" placeholder="Longitud" id="">
+                        <input class="form-control" type="text" name="longitude" placeholder="Longitud" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="">
+                        <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="dept" placeholder="Departamento" id="">
+                        <input class="form-control" type="text" name="dept" placeholder="Departamento" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" id="">
+                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
