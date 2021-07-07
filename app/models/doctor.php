@@ -18,10 +18,25 @@ class doctor_model{
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
+            echo "<script> window.location.href='create_user'; alertify.success('Paciente agregado correctamente!');</script>";
         }catch(PDOException $e){
             echo $e;
         }        
 
+    }
+
+    //Funcion para retornar contar todos los pacientes de un doctor
+    function counUsersByDoctor($idDoctor){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT count(*) FROM users WHERE id_doctor='$idDoctor'");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            echo $result[0][0];
+        }catch(PDOException $e){
+            echo $e;
+        }
     }
     //Funcion par obtener el nombre y el apellido del doctor
     public function getDoctorNames($idDoctor){
