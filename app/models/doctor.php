@@ -137,18 +137,21 @@ class doctor_model{
                     $connection->conn();
                     $connection->conn->exec($query);
                     $connection = null;
+                    echo"<script type='text/javascript'>window.location.href='add_dis'</script>";
                 }else{
                     $query = "INSERT INTO sickness(username, id_diseases, id_doctor, status) VALUES('$username',$idDis,'$idDoctor',$status)";
                     $connection = new Connection;
                     $connection->conn();
                     $connection->conn->exec($query);
                     $connection = null;
+                    echo"<script type='text/javascript'>window.location.href='add_dis'</script>";
                 }
                 
             }
             $connection = null; 
+            echo"<script type='text/javascript'>window.location.href='add_dis'</script>";
         }catch(PDOException $e){
-            echo $e;
+            echo "No has Seleccionado nada";
         }
     }
     public function getSickByStatus($idDoctor){
@@ -162,6 +165,34 @@ class doctor_model{
             for ($i = 0; $i <= $n-1; $i++) {
                 echo "<tr><td>".$result[$i]['name']."</td><td>".$result[$i]['lastname']."</td><td>".$result[$i]['diName']."</td><td>Activo</td></tr>";
             }
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+    public function getSickByStatusForAction($idDoctor){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT users.name as name, users.lastname as lastname, users.username as username, diseases.name as diName, diseases.id as disId, sickness.status FROM users, diseases, sickness WHERE users.username=sickness.username and diseases.id = sickness.id_diseases AND sickness.id_doctor='$idDoctor' AND sickness.status=1 ");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            $n = count($result);
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "<tr><td>".$result[$i]['name']."</td><td>".$result[$i]['lastname']."</td><td>".$result[$i]['diName']."</td><td>Activo</td><td><a href='freeUser?username=".$result[$i]['username']."&dis=".$result[$i]['disId']."'>Dar de alta</a></td></tr>";
+            }
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+    public function updateSickStatusByUser($idDis, $username){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $query = "UPDATE sickness SET status=0 WHERE id_diseases='$idDis' AND username='$username'";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+            $connection = null;
         }catch(PDOException $e){
             echo $e;
         }

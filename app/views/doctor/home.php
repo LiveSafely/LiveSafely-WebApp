@@ -105,105 +105,7 @@
                 </nav>
                 <!-- End of Topbar -->
             <div class="container-fluid">
-                <h1>Inicio del doctor</h1>
- 
-                <hr>
-                <h1>Añadir Paciente</h1>
-                <form action="home" method="post">
-                    <input type="text" name="name" placeholder="Nombre" id="">
-                    <input type="text" name="lastname" placeholder="Apellido" id="">
-                    <input type="text" name="username" placeholder="Nombre de usuario" id="">
-                    <input type="password" name="password" placeholder="Contraseña" id="">
-                    <input type="email" name="email" placeholder="Email" id="">
-                    <input type="text" name="dui" placeholder="Dui" id="">
-                    <input type="number" name="age" placeholder="Edad" id="">
-                    <input type="submit" value="Agregar paciente" name="register" id="">
-                </form>
-                <hr>
-                <h1>Crear Historial por paciente</h1>
-                <form action="home" method="post">
-                    <select name="usernamePaciente" id="">
-                        <option value="">Seleccione un paciente</option>
-                        <?php 
-                        echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                        ?>
-                    </select>
-                    <br>
-                    <input type="text" name="title" placeholder="Titulo" id=""><br>
-                    <textarea name="desc" id="" cols="30" rows="10" placeholder="Descripción de la visita"></textarea>
-                    <input type="submit" value="Añadir Record" name="addRecord">
-                </form>
-                <hr>
-                <h1>Crear Receta por paciente</h1>
-                <form action="login" method="post">
-                    <select name="usernamePaciente" id="">
-                        <option value="">Seleccione un paciente</option>
-                        <?php 
-                        echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                        ?>
-                    </select>
-                    <input type="text" name="diagnosis" placeholder="Diagnostico" id=""><br><br>
-                    <input type="submit" value="Crear cabecera de la rece" name="addRecipe">
-                </form>
-                <hr>
-                <h1>Añadir Enfermedades Infecciosas</h1>
-                <form action="home" method="post">
-                    <input type="text" name="dName" id="" placeholder="Nombre"><br><br>
-                    <textarea name="dDesc" id="" cols="30" rows="10" placeholder="Descripción"></textarea><br><br>
-                    <input type="text" name="dType" id="" placeholder="Tipo"><br><br>
-                    <input type="submit" name="addDisease" value="Agregar enfermedad">
-                </form>
-                <hr>
-                <h1>Mostrar historial completo por paciente</h1>
-                <form action="home" method="post">
-                    <select name="usernamePaciente" id="">
-                            <option value="">Seleccione un paciente</option>
-                            <?php 
-                            echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                            ?>
-                    </select>
-                    <input type="submit" name="showCompleteRecord" value="Mostrar Historial completo">
-                </form>
-                <table>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Titulo</th>
-                        <th>Descripción</th>
-                    </tr>
-                    <?php 
-                        if(isset($_POST["showCompleteRecord"])){
-                            $username = $_POST["usernamePaciente"];
-                            $doctorModel->showRecordByPatient($username, $_SESSION["doctor"]);
-                        }
-                    
-                    ?>
-                </table>
-                <hr>
-                <h1>Asignar enfermamdes a los pacientes</h1>
-                <form action="login" method="post">
-                    <select name="diseases" id="">
-                        <option value="">Seleccione la enfermedad</option>
-                        <?php $doctorModel->getDiseases(); ?>
-                    </select>
-                    <input type="text" name="username" placeholder="Username/Patient" id="">
-                    <select name="status" id="">
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                    </select>
-                    <input type="submit" name="asingValue" value="Asignar">
-                </form>
-                <hr>
-                <h1>Ver todos los pacientes con enfermedades activas</h1>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Nombre de enfermedad</th>
-                        <th>Estado</th>
-                    </tr>
-                    <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
-                </table>
-            <hr>
+                <h1>Bienvenido al modulo del doctor</h1>
             </div>
              
             </div>
@@ -213,7 +115,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; LiveSafely Web App</span>
                     </div>
                 </div>
             </footer>

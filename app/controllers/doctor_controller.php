@@ -1,6 +1,8 @@
 <?php
 
+require_once '../app/models/doctor.php';
 class Doctor extends Controller {
+	
 
 	public function index() {
 		$this->view('doctor/home');
@@ -30,5 +32,15 @@ class Doctor extends Controller {
 	}
 	public function add_dis() {
 		$this->view('doctor/aDis');
+	}
+	public function free_user() {
+		$this->view('doctor/fUser');
+	}
+	public function freeUser() {
+		$doctorModel = new doctor_model();
+		$username = $_GET["username"];
+		$sick = $_GET["dis"];
+		$doctorModel->updateSickStatusByUser($sick, $username);
+		header("Location: /LiveSafelyWebApp/www/doctor/free_user");
 	}
 } 
