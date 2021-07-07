@@ -40,7 +40,7 @@
                                         <hr>
                                     </form>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Olvidaste la contraseña?</a>
+                                        <a class="small" href="home">Regresar al inicio</a>
                                     </div>
                                 </div>
                             </div>
