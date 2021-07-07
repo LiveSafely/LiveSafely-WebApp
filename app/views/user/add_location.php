@@ -92,11 +92,11 @@
                 <p>
                 <form action="add_location" method="post" >
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="latitude" placeholder="Latitud" id="" required>
+                        <input class="form-control" type="number" step="any" name="latitude" placeholder="Latitud" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="longitude" placeholder="Longitud" id="" required>
+                        <input class="form-control" type="number" step="any" name="longitude" placeholder="Longitud" id="" required>
                     </div>
                     <p>
                     <div class="col-sm-10">
