@@ -2,11 +2,17 @@
 
 require '../app/utils/Connection.php';
 
+// CREAMOS LA CLASE DEL USUARIO
 
 class user_model{
+
+    // INICIALIZAMOS EL CONSTRUCTOR 
+
     public function __construct() {
 	}
 
+    // CREAMOS LA FUNCION PARA PODER REGISTRAR LUGARES DE FRECUENCIA
+    // ESTA HACE UNA CONSULTA A LA BASE DE DATOS
     public function registerPlace($id , $latitude, $longitude, $descr, $dept, $username){
         try{
             $query = "INSERT INTO places VALUES('$id' , '$latitude','$longitude', '$descr', '$dept', '$username')";
@@ -19,6 +25,9 @@ class user_model{
 
     }
 
+    // CREAMOS UNA FUNCION PARA OBTENER TODAS LAS RECETAS DE UN USUARIO EN ESPECIFICO
+    // EN ESTE CASO ES DEL USUARIO QUE ESTE LOGEADO EN ESE MOMENTO
+    // DE IGUAL MANERA HACEMOS UNA CONSULTA A LA BD PARA OBTENER LA INFO
     public function getRecipe($username){
         try{
             $connection = new Connection;
@@ -35,6 +44,9 @@ class user_model{
         }
     }
 
+    // CREAMOS UNA FUNCION PARA OBTENER TODAS LAS MEDICINAS QUE POSEEN LAS RECETAS DE UN USUARIO EN ESPECIFICO
+    // EN ESTE CASO ES DEL USUARIO QUE ESTE LOGEADO EN ESE MOMENTO
+    // DE IGUAL MANERA HACEMOS UNA CONSULTA A LA BD PARA OBTENER LA INFO
     public function getMedicine($username){
         try{
             $connection = new Connection;
@@ -51,6 +63,9 @@ class user_model{
         }
     }
 
+    // CREAMOS UNA FUNCION PARA OBTENER LOS NOMBRES DE USUARIO
+    // ESTA SIRVE PARA QUE AL INICIAR SESION EN UNA ESQUINA DIGA EL NOMBRE DEL USUARIO CON EL QUE SE HA INICIADO SESION
+    // HACE UNA IMPRESION DE EL NOMBRE COMPLETO Y POR ESO SE USA LA VARIABLE FULLNAME
     public function getUserNames($user){
         try{
             $connection = new Connection;
