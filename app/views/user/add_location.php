@@ -88,12 +88,28 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Añadir Ubicacion</h1>
-                <form action="add_location" method="post">
-                    <input type="text" name="latitude" placeholder="Latitud" id="">
-                    <input type="text" name="longitude" placeholder="Longitud" id="">
-                    <input type="text" name="descr" placeholder="Descripcion" id="">
-                    <input type="text" name="username" placeholder="Nombre de usuario" id="">
-                    <input type="submit" name="registerPlace" value="Agregar ubicacion">
+                <p>
+                <p>
+                <form action="add_location" method="post" >
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="latitude" placeholder="Latitud" id="">
+                    </div>
+                    <p>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="longitude" placeholder="Longitud" id="">
+                    </div>
+                    <p>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="">
+                    </div>
+                    <p>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" id="">
+                    </div>
+                    <p>
+                    <div class="col-sm-10">
+                        <input type="submit" class="btn btn-primary" name="registerPlace" value="Agregar ubicacion">
+                    </div>
                 </form>
                 <hr>
 

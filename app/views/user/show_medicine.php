@@ -88,18 +88,23 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Descripcion de Recetas</h1>
-                <table>
-                    <tr>
-                        <th>id</th>
-                        <th>Diagnostico</th>
-                        <th>Nombre</th>
-                        <th>Dosis</th>
-                        <th>Cantidad</th>
-                        <th>Comentario</th>
-                        
-                    </tr>
-                    <?php $userModel->getMedicine($_SESSION["user"]);?>
-                </table>
+                <div class="container">
+		        <div class="row">
+			        <div class="col">
+                        <table class="table">
+                            <tr>
+                                <th>id</th>
+                                <th>Diagnostico</th>
+                                <th>Nombre</th>
+                                <th>Dosis</th>
+                                <th>Cantidad</th>
+                                <th>Comentario</th>
+                                
+                            </tr>
+                            <?php $userModel->getMedicine($_SESSION["user"]);?>
+                        </table>
+                    </div>
+		        </div>
                 <hr>
             </div>
              

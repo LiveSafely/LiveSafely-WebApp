@@ -88,15 +88,18 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Historial de Recetas</h1>
-                <table>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Diagnostico</th>
-                        <th>Info</th>
-                        
-                    </tr>
-                    <?php $userModel->getRecipe($_SESSION["user"]);?>
-                </table>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Diagnostico</th>
+                                </tr>
+                                <?php $userModel->getRecipe($_SESSION["user"]);?>
+                            </table>
+                        </div>
+		            </div>
                 <hr>
             </div>
              
