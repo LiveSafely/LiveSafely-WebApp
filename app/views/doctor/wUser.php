@@ -106,22 +106,31 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Ver todos los pacientes con enfermedades activas</h1>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Nombre de enfermedad</th>
-                        <th>Estado</th>
-                    </tr>
-                    <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
-                </table>
-            <hr>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tabla de enferemedades</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Nombre de enfermedad</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>                
+                </div>
+            
             </div>
-             
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -129,6 +138,11 @@
                     </div>
                 </div>
             </footer>
+        </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            
             <!-- End of Footer -->
 
         </div>
@@ -178,6 +192,9 @@
     <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
+    <script src="../../www/assets/js/demo/datatables-demo.js"></script>
+    <script src="../../www/assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../www/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 </body>
 
