@@ -3,14 +3,14 @@
     $adminModel = new admin_model();
     if($_SESSION["admin"]=="") header("Location: /LiveSafelyWebApp/www/home/login");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <base href="/LiveSafelyWebApp/www/admin/"></base>
-    <meta charset="UTF-8">
+	<base href="/LiveSafelyWebApp/www/doctor/"></base>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Admin-Home</title>
@@ -18,8 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../../www/assets/css/safely.css" rel="stylesheet">
 </head>
-<body id = "page-top">
-<div id="wrapper">
+<body id="page-top">
+    <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -38,19 +38,19 @@
                 Options
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed active" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Acciones</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones del admin</h6>
-                        <a class="collapse-item" href="add_doctor">Añadir Doctores</a>
+                        <h6 class="collapse-header">Acciones del Admin</h6>
+                        <a class="collapse-item" href="add_doctor">Añadir Doctor</a>
                     </div>
                 </div>
             </li>
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
@@ -79,7 +79,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Cerrar Sesion</a>
+                                <a class="dropdown-item" href="close" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Cerrar Sesion</a>
                             </div>
                         </li>
 
@@ -88,7 +88,21 @@
                 </nav>
                 <!-- End of Topbar -->
             <div class="container-fluid">
-                <h1>Bienvenido al modulo del admin</h1>
+                <h1>Inicio del Admin</h1>
+                <hr>
+                <h1>Añadir Doctor</h1>
+                <form action="add_doctor" method="post">
+                    <input type="text" name="name" placeholder="Nombre" id="">
+                    <input type="text" name="lastname" placeholder="Apellido" id="">
+                    <input type="text" name="username" placeholder="Nombre de usuario" id="">
+                    <input type="password" name="password" placeholder="Contraseña" id="">
+                    <input type="email" name="email" placeholder="Email" id="">
+                    <input type="text" name="dui" placeholder="Dui" id="">
+                    <input type="text" name="noJunta" placeholder="noJunta" id="">
+                    <input type="number" name="age" placeholder="Edad" id="">
+                    <input type="submit" value="Agregar paciente" name="register" id="">
+                </form>
+
             </div>
             </div>
             <!-- End of Main Content -->
@@ -97,7 +111,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>LiveSafely Web App 2021</span>
+                        <span>LiveSafely 2021</span>
                     </div>
                 </div>
             </footer>
@@ -150,9 +164,13 @@
     <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
+
 </body>
+
 </html>
-<?php
+
+<?php 
+
 if(isset($_POST['register'])){
     $name = $_POST["name"];
     $lastname = $_POST["lastname"];
