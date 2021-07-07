@@ -106,12 +106,20 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Añadir Enfermedades Infecciosas</h1>
-                <form action="add_sick" method="post">
-                    <input type="text" name="dName" id="" placeholder="Nombre"><br><br>
-                    <textarea name="dDesc" id="" cols="30" rows="10" placeholder="Descripción"></textarea><br><br>
-                    <input type="text" name="dType" id="" placeholder="Tipo"><br><br>
-                    <input type="submit" name="addDisease" value="Agregar enfermedad">
-                </form>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Crear Enfermedades</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="add_sick" method="post">
+                            <input type="text" class="form-control mb-2" name="dName" id="" placeholder="Nombre">
+                            <textarea name="dDesc" class="form-control mb-2" id="" cols="30" rows="10" placeholder="Descripción"></textarea>
+                            <input type="text" class="form-control mb-2" name="dType" id="" placeholder="Tipo">
+                            <input type="submit" class="form-control btn btn-success" name="addDisease" value="Agregar enfermedad">
+                        </form>
+                    </div>
+                </div>
+                
                 <hr>
 
 

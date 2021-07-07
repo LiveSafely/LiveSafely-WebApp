@@ -106,33 +106,50 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Asignar enfermedades</h1>
-                <form action="add_dis" method="post">
-                    <select name="diseases" id="">
-                        <option value="">Seleccione la enfermedad</option>
-                        <?php $doctorModel->getDiseases(); ?>
-                    </select>
-                    <select name="username" id="">
-                        <option value="">Seleccione un paciente</option>
-                        <?php 
-                        echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
-                        ?>
-                    </select>
-                    <select name="status" id="">
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                    </select>
-                    <input type="submit" name="asingValue" value="Asignar">
-                </form>
-                <h1>Pacientes con enfermedades activas</h1>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Nombre de enfermedad</th>
-                        <th>Estado</th>
-                    </tr>
-                    <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
-                </table>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Crear Enfermedades</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="add_dis" method="post">
+                            <select name="diseases" class="form-control mb-2" id="">
+                                <option value="">Seleccione la enfermedad</option>
+                                <?php $doctorModel->getDiseases(); ?>
+                            </select>
+                            <select name="username" class="form-control mb-2" id="">
+                                <option value="">Seleccione un paciente</option>
+                                <?php 
+                                echo $doctorModel->getUserByDoctor($_SESSION["doctor"]);
+                                ?>
+                            </select>
+                            <input type="text" class="form-control mb-2" readonly value="Activo">
+                            <input type="submit" class="form-control btn btn-success" name="asingValue" value="Asignar">
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tabla de enferemedades</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Nombre de enfermedad</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $doctorModel->getSickByStatus($_SESSION["doctor"]);?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> 
 
             </div>
              
@@ -206,6 +223,6 @@ if(isset($_POST["asingValue"])){
     $username= $_POST["username"];
     $idDis = $_POST["diseases"];
     $status=$_POST["status"];
-    $doctorModel->insertSickness($username,$_SESSION["doctor"], $idDis, $status);
+    $doctorModel->insertSickness($username,$_SESSION["doctor"], $idDis, 1);
 }
 ?>
