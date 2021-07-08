@@ -20,6 +20,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home/maps">Ver mapas</a></li>
                     <li class="nav-item"><a class="nav-link" href="home/login">Iniciar Sesion</a></li>
                 </ul>
             </div>
