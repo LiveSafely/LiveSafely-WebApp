@@ -70,7 +70,7 @@ class user_model{
         try{
             $connection = new Connection;
             $connection->conn();
-            $statement = $connection->conn->prepare("SELECT name,lastname FROM users");
+            $statement = $connection->conn->prepare("SELECT name,lastname FROM users WHERE username='$user'");
             $statement->execute();
             $result = $statement->fetchAll();
             $fullname = $result[0][0]." ".$result[0][1];
