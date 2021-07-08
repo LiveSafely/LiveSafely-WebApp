@@ -103,8 +103,24 @@
                         <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="" required>
                     </div>
                     <p>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" name="dept" placeholder="Departamento" id="" required>
+                    <div class="col-sm-10">                
+                        <select name="dept" class="form-control" required>
+                            <option>Seleccione un departamento</option>
+                            <option value="San Salvador">San Salvador</option>
+                            <option value="Santa Ana">Santa Ana</option>
+                            <option value="Sonsonate">Sonsonate</option>
+                            <option value="Ahuachapan">Ahuachapan</option>
+                            <option value="Cuscatlan">Cuscatlan</option>
+                            <option value="La Libertad">La Libertad</option>
+                            <option value="Chalatenango">Chalatenango</option>
+                            <option value="San Vicente">San Vicente</option>
+                            <option value="La Paz">La Paz</option>
+                            <option value="Cabañas">Cabañas</option>
+                            <option value="Morazan">Morazan</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="Usulutan">Usulutan</option>
+                            <option value="La Union">La Union</option>
+                        </select>
                     </div>
                     <p>
                     <div class="col-sm-10">
