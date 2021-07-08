@@ -14,6 +14,7 @@ class admin_model{
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
+            echo "<script>alertify.success('Doctor añadido exitosamente!');</script>";
         }catch(PDOException $e){
             echo $e;
         }

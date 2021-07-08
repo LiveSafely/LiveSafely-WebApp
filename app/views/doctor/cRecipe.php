@@ -181,23 +181,14 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
     <script src="../../www/assets/vendor/jquery/jquery.min.js"></script>
     <script src="../../www/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="../../www/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="../../www/assets/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="../../www/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
 </body>
 

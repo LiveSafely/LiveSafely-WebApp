@@ -86,28 +86,35 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
             <div class="container-fluid">
-                <h1>Inicio del Admin</h1>
+                <h1>Bienvenido Administrador</h1>
                 <hr>
-                <h1>Añadir Doctor</h1>
-                <form action="add_doctor" method="post">
-                    <input type="text" name="name" placeholder="Nombre" id="">
-                    <input type="text" name="lastname" placeholder="Apellido" id="">
-                    <input type="text" name="username" placeholder="Nombre de usuario" id="">
-                    <input type="password" name="password" placeholder="Contraseña" id="">
-                    <input type="email" name="email" placeholder="Email" id="">
-                    <input type="text" name="dui" placeholder="Dui" id="">
-                    <input type="text" name="noJunta" placeholder="noJunta" id="">
-                    <input type="number" name="age" placeholder="Edad" id="">
-                    <input type="submit" value="Agregar paciente" name="register" id="">
-                </form>
-
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Añadir un nuevo doctor</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="add_doctor" method="post">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <input type="text" class="form-control" name="name" placeholder="Nombre" id="">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="lastname" placeholder="Apellido" id="">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control mb-2" name="username" placeholder="Nombre de usuario" id="">
+                            <input type="password" class="form-control mb-2" name="password" placeholder="Contraseña" id="">
+                            <input type="email" class="form-control mb-2" name="email" placeholder="Email" id="">
+                            <input type="text" class="form-control mb-2" name="dui" placeholder="Dui" id="">
+                            <input type="text" class="form-control mb-2" name="noJunta" placeholder="noJunta" id="">
+                            <input type="number" class="form-control mb-2" name="age" placeholder="Edad" id="">
+                            <input type="submit" class="form-control btn btn-success" value="Agregar doctor" name="register" id="">
+                        </form>           
+                    </div>
+                </div>               
             </div>
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -147,26 +154,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
     <script src="../../www/assets/vendor/jquery/jquery.min.js"></script>
     <script src="../../www/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="../../www/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="../../www/assets/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="../../www/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
-
 </html>
 
 <?php 
