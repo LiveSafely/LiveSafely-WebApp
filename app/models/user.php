@@ -13,9 +13,9 @@ class user_model{
 
     // CREAMOS LA FUNCION PARA PODER REGISTRAR LUGARES DE FRECUENCIA
     // ESTA HACE UNA CONSULTA A LA BASE DE DATOS
-    public function registerPlace($id , $latitude, $longitude, $descr, $dept, $username){
+    public function registerPlace($latitude, $longitude, $descr, $dept, $username){
         try{
-            $query = "INSERT INTO places VALUES('$id' , '$latitude','$longitude', '$descr', '$dept', '$username')";
+            $query = "INSERT INTO places(latitude, longitude, descr, dept, username) VALUES('$latitude','$longitude', '$descr', '$dept', '$username')";
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);

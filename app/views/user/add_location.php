@@ -108,7 +108,7 @@
                     </div>
                     <p>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" id="" required>
+                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" value="<?php echo $_SESSION["user"]; ?>" disabled>
                     </div>
                     <p>
                     <div class="col-sm-10">
@@ -191,8 +191,9 @@ if(isset($_POST['registerPlace'])){
     $latitude = $_POST["latitude"];
     $longitude = $_POST["longitude"];
     $descr = $_POST["descr"];
-    $username = $_POST["username"];
-    $userModel->registerPlace($id, $latitude, $longitude, $descr, $dept, $username);
+    $username = $_SESSION["user"];
+    $dept = $_POST["dept"];
+    $userModel->registerPlace($latitude, $longitude, $descr, $dept, $username);
 }
 
 ?>
