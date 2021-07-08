@@ -11,9 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveSafely</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <link href="../../assets/css/main.css" rel="stylesheet">
 </head>
-<body id="page-top">
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <div class="container px-4">
             <a class="navbar-brand" href="#page-top">LiveSafely</a>
@@ -37,10 +39,10 @@
         <div class="container px-4 text-center position-relative">
             <h1 class="fw-bolder">¡Bienvenidos a LiveSafely!</h1>
             <p class="lead">La web app que te protege a ti y a los tuyos</p>
-            <a class="btn btn-lg btn-success" href="#map">Revisa las zonas libres de enfermedades</a>
+            <a class="btn btn-lg btn-success" href="#mapi">Revisa las zonas libres de enfermedades</a>
         </div>
     </header>
-    <section id="map w-100">
+    <section class="w-100" id="mapi">
         <div class="container w-100">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-12">
@@ -58,7 +60,7 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-4">
-                                        <input type="submit" value="Mostrar mapa" name="showMap" class="form-control btn btn-primary">
+                                        <input type="submit" value="Mostrar mapa" name="showMap" id="showMap" class="form-control btn btn-primary">
                                     </div>
                                 </div>
                             </form>
@@ -68,17 +70,21 @@
             </div>
         </div>
     </section>
+    <section class="w-100 vh-50 bg-secondary position-relative d-flex">
+        <div class="mapSivar w-100" id='mapSivar'></div>
+    </section> 
+    <footer class="py-3 bg-dark">
+        <div class="container px-4">
+            <p class="m-0 text-center text-white">LiveSafelyWebApp</p>
+        </div>
+    </footer>
 
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="../../assets/js/map.js"></script>
+    
 </body>
 </html>
 
-<?php
-if(isset($_POST["showMap"])){
-    $idDis = $_POST["dis"];
-    $model->returnArrayPlaces($idDis);
-}
-?>

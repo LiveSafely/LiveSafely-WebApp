@@ -29,6 +29,7 @@ class map_model{
     //Funcion para obtener el arreglo de coordenadas para posteriormente trabajarlo en el mapa
     public function returnArrayPlaces($idDis){
         try{
+            $coor="";
             $connection = new Connection;
             $connection->conn();
             $statement = $connection->conn->prepare("select places.latitude as lt, places.longitude as lg, places.dept as dp from sickness, users, places where places.username = users.username and users.username = sickness.username and sickness.status = 1 and sickness.id_diseases = $idDis");
@@ -36,8 +37,10 @@ class map_model{
             $result = $statement->fetchAll();
             $n = count($result);
             for ($i = 0; $i <= $n-1; $i++) {
+                $coor .= "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
                 echo "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
             }
+            return $coor;
             
         }catch(PDOException $e){
             echo $e;
