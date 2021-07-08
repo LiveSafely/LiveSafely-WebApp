@@ -20,14 +20,14 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="home/maps">Ver mapas</a></li>
+                    <li class="nav-item active"><a class="nav-link active" href="home/maps">Ver mapas</a></li>
                     <li class="nav-item"><a class="nav-link" href="home/login">Iniciar Sesion</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Header-->
-    <header class="bg-home text-white vh-100 d-flex align-items-center">
+    <header class="bg-maps text-white vh-100 d-flex align-items-center">
         <div class="tela"></div>
         <div class="container px-4 text-center position-relative">
             <h1 class="fw-bolder">¡Bienvenidos a LiveSafely!</h1>

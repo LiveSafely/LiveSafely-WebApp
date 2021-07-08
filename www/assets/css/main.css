@@ -10878,3 +10878,9 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.bg-maps{
+  background-image: url("../img/images/maps-back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
