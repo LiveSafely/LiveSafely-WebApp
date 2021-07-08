@@ -1,3 +1,8 @@
+<?php
+    require_once '../app/models/map.php';
+    $model = new map_model();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +52,9 @@
                             <form action="maps" method="post">
                                 <div class="row">
                                     <div class="col-lg-8">
-                                        <select name="" class="form-control" id="">
+                                        <select name="dis" class="form-control" id="">
                                             <option value="">Seleccione una enfermedad</option>
+                                            <?php $model->getDis(); ?>
                                         </select>
                                     </div>
                                     <div class="col-lg-4">
@@ -69,3 +75,10 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST["showMap"])){
+    $idDis = $_POST["dis"];
+    $model->returnArrayPlaces($idDis);
+}
+?>
