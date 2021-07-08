@@ -40,15 +40,11 @@
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h2>About this page</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt accusamus obcaecati ducimus in, dolores velit, assumenda cupiditate voluptatibus numquam recusandae laborum officia quisquam iste iusto. Dicta ab ipsum beatae.</p>
-                    <ul>
-                        <li>Clickable nav links that smooth scroll to page sections</li>
-                        <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                        <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the
-                            navbar</li>
-                        <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-                    </ul>
+                    <h2>Acerca de nosotros</h2>
+                    <p class="lead">Buscamos localizar donde fue el origen de la enfermedad, para asi poder tener 
+una referencia de los posibles nexos y asi poder brindar a toda la comunidad la mejor atención 
+medica basada en el tipo de enfermerdad, acompañando asi al paciente y su familia.</p>
+                  
                 </div>
             </div>
         </div>
@@ -58,10 +54,13 @@
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h2>Services we offer</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore,
-                        expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda
-                        laborum vel, labore ut velit dignissimos.</p>
+                    <h2>Servicios</h2>
+                    <p></p>
+                    <ul>
+                        <li>Brindar conocimento sobre los nexos de enfermedades en el pais</li>
+                        <li>Atención medica por parte de un especialista</li>
+                        <li>Capacitaciones para personal medico</li>
+                        
                 </div>
             </div>
         </div>
@@ -71,10 +70,9 @@
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h2>Contact us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat
-                        voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et
-                        repudiandae ipsa exercitationem, in, quo totam.</p>
+                    <h2>Contactanos</h2>
+                    <p class="lead">Tel. 2517-3938</p>
+                    <p class="lead">Email: info@livesafely.com</p>
                 </div>
             </div>
         </div>
