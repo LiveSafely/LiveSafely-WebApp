@@ -31,10 +31,13 @@ class map_model{
         try{
             $connection = new Connection;
             $connection->conn();
-            $statement = $connection->conn->prepare("select places.latitude as lt, places.longitude as lg from sickness, users, places where places.username = users.username and users.username = sickness.username and sickness.status = 1 and sickness.id_diseases = $idDis");
+            $statement = $connection->conn->prepare("select places.latitude as lt, places.longitude as lg, places.dept as dp from sickness, users, places where places.username = users.username and users.username = sickness.username and sickness.status = 1 and sickness.id_diseases = $idDis");
             $statement->execute();
             $result = $statement->fetchAll();
-            echo var_dump($result);
+            $n = count($result);
+            for ($i = 0; $i <= $n-1; $i++) {
+                echo "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
+            }
             
         }catch(PDOException $e){
             echo $e;
