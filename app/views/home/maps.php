@@ -28,7 +28,7 @@
                     <li class="nav-item"><a class="nav-link" href="/LiveSafelyWebApp/www/home/home/home#services">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="/LiveSafelyWebApp/www/home/home/home#contact">Contacto</a></li>
                     <li class="nav-item active"><a class="nav-link active" href="home/maps">Ver mapas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home/login">Iniciar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/LiveSafelyWebApp/www/home/login">Iniciar Sesion</a></li>
                 </ul>
             </div>
         </div>
