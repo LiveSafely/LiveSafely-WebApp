@@ -10,7 +10,12 @@ let osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 function setMap(markers) {
     var zoom = 10;
     for (var i = 0; i < markers.length; i++) {
-        marker = new L.circle([markers[i][1], markers[i][2]])
+        marker = new L.circle([markers[i][1], markers[i][2]],{
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 1000
+        })
             .bindPopup(markers[i][0])
             .addTo(map);
     }
