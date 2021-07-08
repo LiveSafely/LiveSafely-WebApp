@@ -87,4 +87,11 @@
     
 </body>
 </html>
+<?php
+if(isset($_POST["showMap"])){
+    $idDis = $_POST["dis"];
+    $coor = $model->returnArrayPlaces($idDis);
+    echo "<script>setMap([".$coor."])</script>";
 
+}
+?>
