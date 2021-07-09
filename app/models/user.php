@@ -19,6 +19,7 @@ class user_model{
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
+            echo "<script>alertify.success('Ubicación añadida correctamente!');</script>";
         }catch(PDOException $e){
             echo $e;
         }        

@@ -17,6 +17,8 @@
     <link href="../../www/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="../../www/assets/css/safely.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
 <body id="page-top">
     <div id="wrapper">
@@ -90,47 +92,55 @@
                 <h1>Añadir Ubicacion</h1>
                 <p>
                 <p>
-                <form action="add_location" method="post" >
-                    <div class="col-sm-10">
-                        <input class="form-control" type="number" step="any" name="latitude" placeholder="Latitud" id="" required>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Agregar ubicaciones</h6>
                     </div>
-                    <p>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="number" step="any" name="longitude" placeholder="Longitud" id="" required>
+                    <div class="card-body">
+                    <form action="add_location" method="post" >
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" step="any" name="latitude" placeholder="Latitud" id="" required>
+                        </div>
+                        <p>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" step="any" name="longitude" placeholder="Longitud" id="" required>
+                        </div>
+                        <p>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="" required>
+                        </div>
+                        <p>
+                        <div class="col-sm-10">                
+                            <select name="dept" class="form-control" required>
+                                <option>Seleccione un departamento</option>
+                                <option value="San Salvador">San Salvador</option>
+                                <option value="Santa Ana">Santa Ana</option>
+                                <option value="Sonsonate">Sonsonate</option>
+                                <option value="Ahuachapan">Ahuachapan</option>
+                                <option value="Cuscatlan">Cuscatlan</option>
+                                <option value="La Libertad">La Libertad</option>
+                                <option value="Chalatenango">Chalatenango</option>
+                                <option value="San Vicente">San Vicente</option>
+                                <option value="La Paz">La Paz</option>
+                                <option value="Cabañas">Cabañas</option>
+                                <option value="Morazan">Morazan</option>
+                                <option value="San Miguel">San Miguel</option>
+                                <option value="Usulutan">Usulutan</option>
+                                <option value="La Union">La Union</option>
+                            </select>
+                        </div>
+                        <p>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" value="<?php echo $_SESSION["user"]; ?>" disabled>
+                        </div>
+                        <p>
+                        <div class="col-sm-10">
+                            <input type="submit" class="btn btn-primary" name="registerPlace" value="Agregar ubicacion">
+                        </div>
+                    </form>
                     </div>
-                    <p>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" name="descr" placeholder="Descripcion" id="" required>
-                    </div>
-                    <p>
-                    <div class="col-sm-10">                
-                        <select name="dept" class="form-control" required>
-                            <option>Seleccione un departamento</option>
-                            <option value="San Salvador">San Salvador</option>
-                            <option value="Santa Ana">Santa Ana</option>
-                            <option value="Sonsonate">Sonsonate</option>
-                            <option value="Ahuachapan">Ahuachapan</option>
-                            <option value="Cuscatlan">Cuscatlan</option>
-                            <option value="La Libertad">La Libertad</option>
-                            <option value="Chalatenango">Chalatenango</option>
-                            <option value="San Vicente">San Vicente</option>
-                            <option value="La Paz">La Paz</option>
-                            <option value="Cabañas">Cabañas</option>
-                            <option value="Morazan">Morazan</option>
-                            <option value="San Miguel">San Miguel</option>
-                            <option value="Usulutan">Usulutan</option>
-                            <option value="La Union">La Union</option>
-                        </select>
-                    </div>
-                    <p>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text" name="username" placeholder="Nombre de usuario" value="<?php echo $_SESSION["user"]; ?>" disabled>
-                    </div>
-                    <p>
-                    <div class="col-sm-10">
-                        <input type="submit" class="btn btn-primary" name="registerPlace" value="Agregar ubicacion">
-                    </div>
-                </form>
+                </div>
+                
                 <hr>
 
 
@@ -179,26 +189,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
     <script src="../../www/assets/vendor/jquery/jquery.min.js"></script>
     <script src="../../www/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="../../www/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="../../www/assets/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="../../www/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
-
 </html>
 
 <?php 

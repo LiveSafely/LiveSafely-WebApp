@@ -88,23 +88,31 @@
                 <!-- End of Topbar -->
             <div class="container-fluid">
                 <h1>Descripcion de Recetas</h1>
-                <div class="container">
-		        <div class="row">
-			        <div class="col">
-                        <table class="table">
-                            <tr>
-                                <th>id</th>
-                                <th>Diagnostico</th>
-                                <th>Nombre</th>
-                                <th>Dosis</th>
-                                <th>Cantidad</th>
-                                <th>Comentario</th>
-                                
-                            </tr>
-                            <?php $userModel->getMedicine($_SESSION["user"]);?>
-                        </table>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tus medicinas segun las recetas</h6>
                     </div>
-		        </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Diagnostico</th>
+                                        <th>Nombre</th>
+                                        <th>Dosis</th>
+                                        <th>Cantidad</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $userModel->getMedicine($_SESSION["user"]);?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> 
+
                 <hr>
             </div>
              
@@ -151,23 +159,16 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript-->
     <script src="../../www/assets/vendor/jquery/jquery.min.js"></script>
     <script src="../../www/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="../../www/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="../../www/assets/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
     <script src="../../www/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
     <script src="../../www/assets/js/demo/chart-area-demo.js"></script>
     <script src="../../www/assets/js/demo/chart-pie-demo.js"></script>
+    <script src="../../www/assets/js/demo/datatables-demo.js"></script>
+    <script src="../../www/assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../www/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 </body>
 
