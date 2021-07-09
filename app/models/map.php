@@ -38,7 +38,7 @@ class map_model{
             $n = count($result);
             for ($i = 0; $i <= $n-1; $i++) {
                 $coor .= "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
-                echo "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
+                //echo "['".$result[$i]['dp']."',". $result[$i]['lt'] .",". $result[$i]['lg'] ."],";
             }
             return $coor;
             
