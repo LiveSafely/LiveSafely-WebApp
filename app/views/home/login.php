@@ -13,6 +13,8 @@
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="assets/css/safely.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
 
 <body class="bg-gradient-primary">
@@ -31,10 +33,10 @@
                                     </div>
                                     <form method="post" class="login">
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control form-control-user"  placeholder="Ingrese su nombre de usuario...">
+                                            <input type="text" name="username" class="form-control form-control-user" required  placeholder="Ingrese su nombre de usuario...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user" placeholder="Contraseña">
+                                            <input type="password" name="password" class="form-control form-control-user" required placeholder="Contraseña">
                                         </div>
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Iniciar Sesion" name="log-in" >
                                         <hr>
@@ -53,10 +55,11 @@
         </div>
 
     </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="assets/css/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/css/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/css/js/sb-admin-2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
 </html>
 <?php  
