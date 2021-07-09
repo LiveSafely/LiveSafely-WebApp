@@ -6,9 +6,9 @@ El objetivo de la aplicacion Web, es permitirle a los usuarios poder identificar
 
 # Prerequisitos
 
-- Sistema operativo (Windows 10 en adelante).
-− Java 8.0.
-− Conexión internet local.
+    - Sistema operativo (Windows 10 en adelante).
+    − Java 8.0
+    − Conexión internet local.
 
 # Herramientas utilizadas para el desarrollo
 
