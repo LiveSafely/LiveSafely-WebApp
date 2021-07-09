@@ -112,6 +112,7 @@ class doctor_model{
             $connection = new Connection;
             $connection->conn();
             $connection->conn->exec($query);
+            echo "<script>alertify.success('Enfermedad agregada correctamente!');</script>";
         }catch(PDOException $e){
             echo $e;
         }  
@@ -245,6 +246,48 @@ class doctor_model{
             $connection->conn();
             $connection->conn->exec($query);
             $connection = null;
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+
+    //Funcion para imprimir las cajas de texto para insertar las medicinas en html
+    public function setMedicines($amount){
+        for($i = 0; $i < $amount; $i++){
+            $j = $i+1;
+            echo "<div class='row mb-2'>
+                            <div class='col'><input type='text' class='form-control' name='name".$i."' placeholder='Nombre ".$j."' ></div>
+                            <div class='col'><input type='text' class='form-control' name='dosis".$i."' placeholder='Dosis ".$j."'  ></div>
+                            <div class='col'><input type='number' class='form-control' name='qty".$i."' placeholder='Cantidad ".$j."'  ></div>
+                            <div class='col'><input type='text' class='form-control' name='comment".$i."' placeholder='comentario' value='-'></div>
+                </div>";
+        }
+        echo "<input type='submit' class='form-control btn btn-success' name='insertMedicines' placeholder='comentario' value='Agregar'>";
+        
+    }
+
+    //funcion para insertar las medicinas hacia la receta
+    public function insertMedicines($idRecipe, $name, $dosis, $cantidad, $comment){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $query = "INSERT INTO medicine(id_recipe,name, dosis, qty, comment) VALUES('$idRecipe','$name', '$dosis', '$cantidad', '$comment')";
+            $connection = new Connection;
+            $connection->conn();
+            $connection->conn->exec($query);
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+    //Funcon para obtener la ultima receta ingresada y asi poderla trabajar
+    public function getLastRecipe(){
+        try{
+            $connection = new Connection;
+            $connection->conn();
+            $statement = $connection->conn->prepare("SELECT id FROM recipe order by id desc limit 1");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            return $result[0][0];
         }catch(PDOException $e){
             echo $e;
         }
